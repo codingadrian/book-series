@@ -1,0 +1,36 @@
+---
+layout: default
+title: Map
+---
+
+<main>
+    <div class="map-background">
+        <div class="map-container">
+            <svg id="map" viewBox="0 0 3000 3000" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                <image class="map-image" href="/assets/images/map.svg" />
+                
+                <!-- Marker 1 -->
+                <a xlink:href="https://example.com/location1" class="map-marker">
+                    <image href="/assets/images/marker-1.svg" x="1240" y="1495" width="40" height="40" />
+                    <g class="map-label-group">
+                        <rect x="1150" y="850" width="1000" height="500" rx="15" ry="15" class="label-background"></rect>
+                        <text x="1180" y="850" class="map-label">
+                            <tspan x="1180" dy="1.8em" class="map-marker-title">La Cacería</tspan>
+                            <tspan x="1180" dy="1.2em">Colon arriba a la que llamo</tspan>
+                            <tspan x="1180" dy="1.2em">isla La Huerta</tspan>
+                        </text>
+                    </g>
+                </a>
+
+                <!-- Marker 2 -->
+                <a xlink:href="https://example.com/location1" class="map-marker">
+                    <image href="/assets/images/marker-1.svg" x="1295" y="1550" width="40" height="40" />
+                    <g class="map-label-group">
+                        <rect x="1150" y="850" width="1000" height="500" rx="15" ry="15" class="label-background"></rect>
+                        <text x="1190" y="900" class="map-label">Las Trompetas de la Guerra</text>
+                    </g>
+                </a>
+            </svg>
+        </div>
+    </div>
+</main>

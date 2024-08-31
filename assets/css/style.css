@@ -1,0 +1,239 @@
+/* General Settings */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden; /* Ensure no scroll bars on the main page */
+}
+
+/* Background Image */
+.background-container {
+    background: url('../images/home-background-5.png') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 0; /* Ensure this is lower than the navbar */
+}
+
+.background-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+    z-index: 1; /* Ensure the background overlay is behind the navbar */
+}
+
+
+/* Navbar Settings */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure the navbar takes the full width of the viewport */
+    max-width: 1200px; /* Maintain a max-width for larger screens */
+    margin: 0 auto; /* Center the navbar */
+    padding: 10px 20px; /* Add some padding for spacing */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1002; /* Ensure the navbar stays on top of the background and overlay */
+    /* background-color: rgba(0, 0, 0, 0.7); /* Optional: Add background color to navbar */
+}
+
+.logo img {
+    height: 50px; /* Adjust size as needed */
+    filter: invert(18%) sepia(100%) saturate(7481%) hue-rotate(-15deg) brightness(85%) contrast(112%);
+
+}
+
+.nav-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    display: block;
+}
+
+.nav-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Main Content Centering */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content-center {
+    text-align: center;
+    padding: 20px;
+    color: #fff; /* Adjust to match your theme */
+}
+
+.home-title h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.home-cta p {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.home-overview p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book-thumbnails {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.book-thumbnail {
+    max-width: 250px;
+    text-align: center; /* Center the text */
+}
+
+.book-thumbnail img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.book-thumbnail h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.book-thumbnail p {
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+/* Footer Settings */
+footer {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    text-align: center;
+    padding: 1px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Map CSS */
+/* Map Container */
+.map-container {
+    width: 65vw;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* SVG Map Setup */
+#map {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: scale(0.98);
+    transform-origin: center;
+}
+
+/* Map Image */
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: invert(18%) sepia(100%) saturate(10000%) hue-rotate(-5deg) brightness(80%) contrast(120%);
+}
+
+/* Map Markers */
+.map-marker image {
+    cursor: pointer;
+    transition: filter 0.2s;
+    filter: invert(64%) sepia(100%) saturate(6437%) hue-rotate(1deg) brightness(101%) contrast(109%);
+    /* This filter creates a gold color */
+}
+
+.map-marker:hover image {
+    filter: invert(18%) sepia(100%) saturate(7481%) hue-rotate(-15deg) brightness(85%) contrast(112%);
+
+}
+
+.map-label-group {
+    display: none; /* Hide the label group by default */
+}
+
+.label-background {
+    fill: rgba(255, 255, 255, 0.2); /* Background color with transparency */
+}
+
+.map-label {
+    font-family: Arial, sans-serif;
+    font-size: 38px;
+    fill: black;
+    display: none;
+    font-weight: bold;
+}
+
+.map-marker-title {
+    font-style: italic;
+}
+
+.map-marker:hover .map-label-group {
+    display: block; /* Show the label group on hover */
+}
+
+
+.map-marker:hover .map-label {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .map-container {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .map-image {
+        transform: rotate(90deg);
+    }
+}
