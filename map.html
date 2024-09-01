@@ -1,36 +1,68 @@
 ---
 layout: default
+permalink: /map/
 title: Map
 ---
 
-<main>
-    <div class="map-background">
-        <div class="map-container">
-            <svg id="map" viewBox="0 0 3000 3000" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-                <image class="map-image" href="/assets/images/map.svg" />
-                
-                <!-- Marker 1 -->
-                <a xlink:href="https://example.com/location1" class="map-marker">
-                    <image href="/assets/images/marker-1.svg" x="1240" y="1495" width="40" height="40" />
-                    <g class="map-label-group">
-                        <rect x="1150" y="850" width="1000" height="500" rx="15" ry="15" class="label-background"></rect>
-                        <text x="1180" y="850" class="map-label">
-                            <tspan x="1180" dy="1.8em" class="map-marker-title">La Cacería</tspan>
-                            <tspan x="1180" dy="1.2em">Colon arriba a la que llamo</tspan>
-                            <tspan x="1180" dy="1.2em">isla La Huerta</tspan>
-                        </text>
-                    </g>
-                </a>
+<div class="map-container">
+    <img src="{{ site.baseurl }}/assets/images/map-2.svg" alt="Map" class="map-image">
+    <div class="compass" style="top: 85%; left: 25%;"></div>
 
-                <!-- Marker 2 -->
-                <a xlink:href="https://example.com/location1" class="map-marker">
-                    <image href="/assets/images/marker-1.svg" x="1295" y="1550" width="40" height="40" />
-                    <g class="map-label-group">
-                        <rect x="1150" y="850" width="1000" height="500" rx="15" ry="15" class="label-background"></rect>
-                        <text x="1190" y="900" class="map-label">Las Trompetas de la Guerra</text>
-                    </g>
-                </a>
-            </svg>
-        </div>
+    <!-- CUENTOS GRATIS -->
+    <!-- Marker 1 -->
+    <a href="your-url-1.html" id="marker-1">
+        <div class="marker-one" style="top: 32%; left: 39.5%;" data-title="La Cacería" data-date="Setiembre de 1502"></div>
+    </a>
+
+
+    <!-- LA RUTA DE LAS TORMENTAS -->
+    <!-- Marker 1 -->
+    <a href="your-url-1.html" id="marker-1">
+        <div class="marker-two" style="top: 29%; left: 39.5%;" data-title="La Cacería" data-date="Setiembre de 1502"></div>
+    </a>
+    
+    <!-- Marker 2 -->
+    <a href="your-url-2.html" id="marker-2">
+        <div class="marker-two" style="top: 60%; left: 30%;" data-title="Marker 2 Title" data-date="Feb 10, 2024"></div>
+    </a>
+
+    <!-- Map Label -->
+    <div id="map-label" class="map-label">
+        <h3 id="label-title">
+            <span id="label-name"></span> | <span id="label-date"></span>
+        </h3>
     </div>
-</main>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const markers = document.querySelectorAll('.marker-one, .marker-two');
+    const label = document.getElementById('map-label');
+    const labelName = document.getElementById('label-name');
+    const labelDate = document.getElementById('label-date');
+
+    markers.forEach(marker => {
+        marker.addEventListener('mouseenter', function() {
+            // Get the data attributes from the marker
+            const name = this.getAttribute('data-title');
+            const date = this.getAttribute('data-date');
+            
+            // Update the label content
+            labelName.textContent = name;
+            labelDate.textContent = date;
+
+            // Show the label
+            label.style.visibility = 'visible';
+            label.style.opacity = '1';
+        });
+
+        marker.addEventListener('mouseleave', function() {
+            // Hide the label when the marker is not hovered
+            label.style.visibility = 'hidden';
+            label.style.opacity = '0';
+        });
+    });
+});
+
+</script>
