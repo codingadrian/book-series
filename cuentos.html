@@ -12,7 +12,7 @@ title: Cuentos
         {% for post in site.posts %}
         <div class="cuento-item">
             <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.title }}" class="cuento-image">
-            <h2 class="cuento-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <h2 class="cuento-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
             <p class="cuento-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
         </div>
         {% endfor %}
