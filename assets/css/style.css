@@ -11,6 +11,14 @@ body, html {
     align-items: center;
 }
 
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 /* Background Image */
 .background-container {
     background: url('../images/home-background-5.png') no-repeat center center fixed;
@@ -56,6 +64,12 @@ body, html {
     filter: invert(18%) sepia(100%) saturate(7481%) hue-rotate(-15deg) brightness(85%) contrast(112%);
 }
 
+.logo img:hover {
+    filter: invert(30%) sepia(100%) saturate(800%) hue-rotate(-15deg) brightness(120%) contrast(130%);
+    transition: 0.8s;
+    
+}
+
 .nav-menu {
     list-style-type: none;
     margin: 0;
@@ -68,29 +82,29 @@ body, html {
 }
 
 .nav-menu li a {
-    color: white;
+    color: #ff0000;
     text-decoration: none;
     padding: 14px 16px;
     display: block;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .nav-menu li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    color: #ff5a00;
+    transition: 0.8s;
 }
 
-/* Main Content Centering */
-main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
 
+/* Home Settings */
 .content-center {
     text-align: center;
+    height: 75vh;
+    width: 65vw;
     padding: 20px;
-    color: #fff; /* Adjust to match your theme */
+    color: #1f1d1d; /* Adjust to match your theme */
+    background-color: rgb(255, 252, 252, 0.3);
+    border-radius: 15px;
 }
 
 .home-title h1 {
@@ -124,9 +138,21 @@ main {
 }
 
 .book-thumbnail img {
-    width: 100%;
+    width: 80%;
     border-radius: 8px;
     margin-bottom: 10px;
+}
+
+.book-thumbnail a {
+    text-decoration: none;
+    color: #000000; /* Ensures the link color is the same as the title */
+    position: relative;
+    z-index: 10;
+}
+
+.book-thumbnail a:hover {
+    color: #ff5a00; /* Optional: Changes color on hover */
+    transition: 0.8s;
 }
 
 .book-thumbnail h3 {
@@ -138,29 +164,24 @@ main {
 
 .book-thumbnail p {
     font-size: 16px;
+    font-weight: bold;
+    color: #000000;
 }
 
 
-
-/* Footer Settings */
-footer {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    color: white;
-    text-align: center;
-    padding: 1px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Map CSS */
+/* Map Settings */
 .map-container {
     position: relative;
     max-width: 100%;
-    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 75vh;
+    width: 65vw;
+    padding: 20px;
+    color: #1f1d1d; /* Adjust to match your theme */
+    background-color: rgb(255, 252, 252, 0.3);
+    border-radius: 15px;
 }
 
 .map-label {
@@ -203,7 +224,7 @@ footer {
 
 
 .map-image {
-    width: 70%; /* Resize the image to 70% of its container */
+    width: 100%; /* Resize the image to 70% of its container */
     height: auto;
     display: block;
 }
@@ -260,6 +281,7 @@ footer {
     opacity: 1;
 }
 
+/* Author Settings */
 .about-author-container {
     max-width: 800px;
     margin: 50px auto;
@@ -295,9 +317,10 @@ footer {
     margin-bottom: 20px;
 }
 
+/* Post Settings */
 .post-container {
     max-width: 800px;
-    margin: 50px auto;
+    margin: 15vh auto;
     padding: 20px;
     background-color: rgba(249, 249, 249, 0.8);
     border-radius: 10px;
@@ -311,15 +334,11 @@ footer {
     color: #222;
 }
 
-.post-date {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 20px;
-}
 
 .post-content {
     font-size: 18px;
     line-height: 1.6;
+    text-align: justify;
 }
 
 .post-footer {
@@ -328,14 +347,18 @@ footer {
 }
 
 .post-footer a {
-    color: #007BFF;
     text-decoration: none;
+    color: #000000; /* Ensures the link color is the same as the title */
+    position: relative;
+    z-index: 10;
 }
 
 .post-footer a:hover {
     text-decoration: underline;
 }
 
+
+/* Cuentos Settings */
 .cuentos-container {
     max-width: 40vw;
     margin: 50px auto;
@@ -397,9 +420,14 @@ footer {
     }
 }
 
-.post-footer a {
-    text-decoration: none;
-    color: #000000; /* Ensures the link color is the same as the title */
-    position: relative;
-    z-index: 10;
+
+/* Footer Settings */
+footer {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    text-align: center;
+    padding: 1px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
