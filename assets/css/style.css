@@ -169,8 +169,8 @@ footer {
     padding: 10px;
     top: 5%;
     left: 42%;
-    width: auto; /* Width adjusts based on content */
-    height: auto; /* Height adjusts based on content */
+    width: 25vw;
+    height: auto;
     position: absolute;
     border-radius: 5px;
     visibility: hidden; /* Hidden by default */
@@ -198,14 +198,23 @@ footer {
 }
 
 
-
 .map-image {
     width: 70%; /* Resize the image to 70% of its container */
     height: auto;
     display: block;
 }
 
-.marker {
+.compass {
+    position: absolute;
+    width: 3vw; /* Adjust the size as needed */
+    height: 3vw; /* Adjust the size as needed */
+    background-image: url('../images/compass.svg'); /* Gold version of the marker */
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 10; /* Ensure markers are above the map */
+}
+
+.marker-one {
     position: absolute;
     width: 1vw; /* Adjust the size as needed */
     height: 1vw; /* Adjust the size as needed */
@@ -218,11 +227,31 @@ footer {
     transition: background-image 0.3s ease;
 }
 
-.marker:hover {
+.marker-one:hover {
     background-image: url('../images/marker-1-red.svg'); /* Red version of the marker */
 }
 
-.marker:hover + .map-label {
+
+.marker-two {
+    position: absolute;
+    width: 1vw; /* Adjust the size as needed */
+    height: 1vw; /* Adjust the size as needed */
+    background-image: url('../images/marker-2-gold.svg'); /* Gold version of the marker */
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Ensure markers are above the map */
+    transition: background-image 0.3s ease;
+}
+
+.marker-two:hover {
+    background-image: url('../images/marker-2-red.svg'); /* Red version of the marker */
+}
+
+/* Common label hover behavior */
+.marker-one:hover + .map-label,
+.marker-two:hover + .map-label {
     visibility: visible;
     opacity: 1;
 }
