@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Prueba"
-date:   2024-08-15 21:13:40 -0600
+date:   2024-08-31 21:13:40 -0600
 categories: cuentos
 permalink: /cuentos/:title/
 image: /assets/images/cuento1.png

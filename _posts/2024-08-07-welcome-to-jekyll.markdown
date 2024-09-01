@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Prueba"
-date:   2024-08-15 21:13:40 -0600
+title:  "La Virgen"
+date:   2024-08-07 21:13:40 -0600
 categories: cuentos
+image: /assets/images/cuento2.png
 permalink: /cuentos/:title/
-image: /assets/images/cuento1.png
 ---
 
 Febrero de 1522, Mar del Sur.
@@ -34,3 +34,4 @@ El oro, la oferta de la guerra, los dientes de los perros
 Se adentraban y salian a las 80/100 leguas a la costa al atardecer para toparse, Gil y Andrés Niño, como enamorados se esperarian
 
 Caminabamos todo el día, cruzando quebradas y rios, quedando el Dávila, renco de una pata y atormentado por el dolor. Uno de los cacique le di uno hamaca en la que lo cargaban por un madero, algunas veces indios y otras cristianos.
+
