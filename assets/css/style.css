@@ -132,11 +132,15 @@ main {
 .book-thumbnail h3 {
     font-size: 20px;
     margin-bottom: 5px;
+    position: relative; /* Ensure it's positioned above other content */
+    z-index: 10; /* Arbitrary high value to ensure it's clickable */
 }
 
 .book-thumbnail p {
     font-size: 16px;
 }
+
+
 
 /* Footer Settings */
 footer {
@@ -167,9 +171,9 @@ footer {
     justify-content: center;
     align-items: flex-start;
     padding: 10px;
-    top: 5%;
+    top: 20%;
     left: 42%;
-    width: 25vw;
+    width: auto;
     height: auto;
     position: absolute;
     border-radius: 5px;
@@ -254,4 +258,141 @@ footer {
 .marker-two:hover + .map-label {
     visibility: visible;
     opacity: 1;
+}
+
+.about-author-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(249, 249, 249, 0.2); /* More transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.author-image-container {
+    margin-bottom: 20px;
+}
+
+.author-image-container img {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.author-info h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: red;
+}
+
+.author-info p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.post-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(249, 249, 249, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.post-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.post-date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.post-content {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.post-footer {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.post-footer a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.post-footer a:hover {
+    text-decoration: underline;
+}
+
+.cuentos-container {
+    max-width: 40vw;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(249, 249, 249, 0.4); /* Transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000000;
+}
+
+.cuentos-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between items */
+    justify-content: space-between;
+}
+
+.cuento-item {
+    flex: 1 1 calc(50% - 20px); /* Each item takes up 50% of the container minus the gap */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.cuento-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cuento-title {
+    margin: 15px 0 10px;
+    font-size: 18px;
+    color: #000000;
+}
+
+.cuento-title a {
+    text-decoration: none;
+    color: #000000; /* Ensures the link color is the same as the title */
+    position: relative;
+    z-index: 10;
+}
+
+.cuento-title a:hover {
+    text-decoration: underline;
+    color: #2d2e30; /* Optional: Changes color on hover */
+}
+
+.cuento-excerpt {
+    padding: 15px;
+    font-size: 16px; /* Smaller font size */
+    line-height: 1.4;
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+    .cuento-item {
+        flex: 1 1 100%; /* Stacks items on smaller screens */
+    }
 }
