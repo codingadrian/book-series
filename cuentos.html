@@ -1,0 +1,18 @@
+---
+layout: default
+permalink: /cuentos/
+title: Cuentos
+---
+
+<h1>Cuentos</h1>
+<p class="cuentos-intro">Explora una colección de cuentos escritos por Adrian Robles. Cada cuento es un viaje único a través de la historia y
+    la imaginación.</p>
+
+<div class="cuentos-list">
+    {% for post in site.posts limit: 6 %}
+    <div class="cuento-item">
+        <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.title }}" class="cuento-image">
+        <h2 class="cuento-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+    </div>
+    {% endfor %}
+</div>

@@ -26,6 +26,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/book-series"
 url: "https://codingadrian.github.io"
 permalink: /:name/
+permalink: /cuentos/:title/
 
 # Site author
 author:
