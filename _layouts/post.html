@@ -2,14 +2,16 @@
 layout: default
 ---
 
-<div class="post-container">
-    <h1 class="post-title">{{ page.title }}</h1>
-    
-    <div class="post-content">
-        {{ content }}
-    </div>
+<body class="post-layout">
+    <div class="post-container">
+        <h1 class="post-title">{{ page.title }}</h1>
 
-    <div class="post-footer">
-        <p><a href="{{ site.baseurl }}/cuentos/">← Back to Cuentos</a></p>
+        <div class="post-content">
+            {{ content }}
+            <div class="post-footer">
+                <p><a href="{{ site.baseurl }}/cuentos/">← Back to Cuentos</a></p>
+            </div>
+        </div>
+
     </div>
-</div>
+</body>

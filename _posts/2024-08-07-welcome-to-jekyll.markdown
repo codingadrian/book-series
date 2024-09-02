@@ -35,3 +35,4 @@ Se adentraban y salian a las 80/100 leguas a la costa al atardecer para toparse,
 
 Caminabamos todo el día, cruzando quebradas y rios, quedando el Dávila, renco de una pata y atormentado por el dolor. Uno de los cacique le di uno hamaca en la que lo cargaban por un madero, algunas veces indios y otras cristianos.
 
+Final

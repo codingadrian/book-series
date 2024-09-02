@@ -2,46 +2,47 @@
 body, html {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    width: auto;
+    height: auto;
+    min-width: 100vw;
+    min-height: 95vh;
     font-family: Arial, sans-serif;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: visible;
+    background: url('../images/home-background-4.png') no-repeat center center fixed;
+    background-size: cover;
 }
+
+body.post-layout main {
+    height: auto; /* Allow main to adjust based on the content */
+    min-height: 85vh; /* Ensure it covers at least the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
 
 
 main {
     flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    max-height: 100%;
-}
-
-/* Background Image */
-.background-container {
-    background: url('../images/home-background-5.png') no-repeat center center fixed;
-    background-size: cover;
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    z-index: 0; /* Ensure this is lower than the navbar */
-}
-
-.background-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    margin: 0 auto;
+    width: 75%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
-    z-index: 1; /* Ensure the background overlay is behind the navbar */
+    min-height: 85vh;
+    max-height: 85vh;
+    background-color: rgb(245, 245, 220, 0.4);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
 }
+
+
 
 /* Navbar Settings */
 .navbar-container {
@@ -51,13 +52,11 @@ main {
     width: 100%; /* Ensure the navbar takes the full width of the viewport */
     max-width: 1200px; /* Maintain a max-width for larger screens */
     margin: 0 auto; /* Center the navbar */
-    padding: 10px 20px; /* Add some padding for spacing */
-    position: fixed;
+    padding: 5px 5px; /* Add some padding for spacing */
+    position: -webkit-sticky;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 1002; /* Ensure the navbar stays on top of the background and overlay */
-    /* background-color: rgba(0, 0, 0, 0.7); /* Optional: Add background color to navbar */
 }
 
 .logo img {
@@ -68,7 +67,6 @@ main {
 .logo img:hover {
     filter: invert(30%) sepia(100%) saturate(800%) hue-rotate(-15deg) brightness(120%) contrast(130%);
     transition: 0.8s;
-    
 }
 
 .nav-menu {
@@ -97,16 +95,7 @@ main {
 }
 
 
-/* Home Settings */
-.content-center {
-    text-align: center;
-    height: 75vh;
-    width: 65vw;
-    padding: 20px;
-    color: #1f1d1d; /* Adjust to match your theme */
-    background-color: rgb(255, 252, 252, 0.4);
-    border-radius: 15px;
-}
+/* Home Settigns */
 
 .home-title h1 {
     font-size: 48px;
@@ -115,16 +104,17 @@ main {
 
 .home-cta p {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-weight: bold;
 }
 
 .home-overview p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    max-width: 800px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    max-width: 75%;
     margin-left: auto;
     margin-right: auto;
+    font-weight: bold;
 }
 
 .book-thumbnails {
@@ -134,7 +124,7 @@ main {
 }
 
 .book-thumbnail {
-    max-width: 250px;
+    max-width: 300px;
     text-align: center; /* Center the text */
 }
 
@@ -169,22 +159,95 @@ main {
     color: #000000;
 }
 
-
-/* Map Settings */
-.map-container {
-    position: relative;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75vh;
-    width: 65vw;
-    padding: 20px;
-    color: #1f1d1d; /* Adjust to match your theme */
-    background-color: rgb(255, 252, 252, 0.4);
-    border-radius: 15px;
+/* Cuentos Settings */
+.cuentos-intro {
+    font-size: 20px;
+    font-weight: bold;
 }
 
+.cuentos-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between items */
+    justify-content: center; /* Center items horizontally */
+}
+
+.cuento-item {
+    flex: 1 1 calc(35% - 20px); /* Each item takes up roughly 35% of the container minus the gap */
+    max-width: 300px; /* Optional: Set a maximum width for each item */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cuento-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cuento-title {
+    margin: 15px 0 10px;
+    font-size: 18px;
+    color: #000000;
+}
+
+.cuento-title a {
+    text-decoration: none;
+    color: #000000; /* Ensures the link color is the same as the title */
+    position: relative;
+    z-index: 10;
+}
+
+.cuento-title a:hover {
+    text-decoration: underline;
+    color: #2d2e30; /* Optional: Changes color on hover */
+}
+
+@media (max-width: 768px) {
+    .cuento-item {
+        flex: 1 1 100%; /* Stacks items on smaller screens */
+    }
+}
+
+/* Post Settings */
+.post-container {
+    max-width: 80%;
+    padding-top: 140px;
+}
+.post-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.post-content {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    font-weight: bold;
+    max-height: 85vh;
+}
+
+.post-footer {
+    margin-top: 40px;
+    text-align: center;
+    z-index: 100; /* Ensures it is on top */
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.post-footer a {
+    text-decoration: none;
+    color: #000000; /* Ensures the link color is the same as the title */
+    position: relative;
+    z-index: 10;
+}
+
+.post-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Map Settings */
 .map-label {
     background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
     color: black;
@@ -225,7 +288,7 @@ main {
 
 
 .map-image {
-    width: 100%; /* Resize the image to 70% of its container */
+    width: 95%; /* Resize the image to 70% of its container */
     height: auto;
     display: block;
 }
@@ -283,19 +346,8 @@ main {
 }
 
 /* Author Settings */
-.about-author-container {
-    margin: 50px auto;
-    text-align: center;
-    height: 75vh;
-    width: 65vw;
-    padding: 20px;
-    color: #1f1d1d; /* Adjust to match your theme */
-    background-color: rgb(255, 252, 252, 0.4);
-    border-radius: 15px;
-}
-
 .author-image-container {
-    margin-bottom: 20px;
+    margin: 20px auto;
 }
 
 .author-image-container img {
@@ -303,131 +355,29 @@ main {
     height: 15vw;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .author-info h1 {
     font-size: 32px;
-    margin-bottom: 20px;
-
 }
 
 .author-info p {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* Post Settings */
-.post-container {
-    position: relative;
-    height: 75vh;
-    width: 65vw;
-    margin: 15vh auto;
-    padding: 20px;
-    background-color: rgba(249, 249, 249, 0.4);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #000000;
-}
-
-.post-title {
-    font-size: 36px;
-    margin-bottom: 10px;
-    color: #222;
-}
-
-.post-content {
-    font-size: 18px;
-    line-height: 1.6;
-    text-align: justify;
+    margin: 0 auto;
+    max-width: 85%;
+    padding-bottom: 30px;
     font-weight: bold;
 }
-
-.post-footer {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.post-footer a {
-    text-decoration: none;
-    color: #000000; /* Ensures the link color is the same as the title */
-    position: relative;
-    z-index: 10;
-}
-
-.post-footer a:hover {
-    text-decoration: underline;
-}
-
-
-
-/* Cuentos Settings */
-.cuentos-container {
-    margin: 50px auto;
-    text-align: center;
-    height: 75vh;
-    width: 65vw;
-    padding: 20px;
-    color: #000000; /* Adjust to match your theme */
-    background-color: rgba(255, 252, 252, 0.4);
-    border-radius: 15px;
-    font-weight: bold;
-}
-
-.cuentos-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Space between items */
-    justify-content: center; /* Center items horizontally */
-}
-
-.cuento-item {
-    flex: 1 1 calc(35% - 20px); /* Each item takes up roughly 35% of the container minus the gap */
-    max-width: 300px; /* Optional: Set a maximum width for each item */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.cuento-image {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.cuento-title {
-    margin: 15px 0 10px;
-    font-size: 18px;
-    color: #000000;
-}
-
-.cuento-title a {
-    text-decoration: none;
-    color: #000000; /* Ensures the link color is the same as the title */
-    position: relative;
-    z-index: 10;
-}
-
-.cuento-title a:hover {
-    text-decoration: underline;
-    color: #2d2e30; /* Optional: Changes color on hover */
-}
-
-@media (max-width: 768px) {
-    .cuento-item {
-        flex: 1 1 100%; /* Stacks items on smaller screens */
-    }
-}
-
-
 
 /* Footer Settings */
 footer {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     color: white;
     text-align: center;
     padding: 1px 0;
     position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
+    margin: 0 auto;
 }

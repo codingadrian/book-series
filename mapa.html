@@ -4,65 +4,64 @@ permalink: /mapa/
 title: Mapa
 ---
 
-<div class="map-container">
-    <img src="{{ site.baseurl }}/assets/images/map-2.svg" alt="Map" class="map-image">
-    <div class="compass" style="top: 85%; left: 18%;"></div>
+<img src="{{ site.baseurl }}/assets/images/map-2.svg" alt="Map" class="map-image">
+<div class="compass" style="top: 85%; left: 18%;"></div>
 
-    <!-- CUENTOS GRATIS -->
-    <!-- Marker 1 -->
-    <a href="your-url-1.html" id="marker-1">
-        <div class="marker-one" style="top: 32%; left: 39.5%;" data-title="Plumas de Colores" data-date="6 Calli, 17 Izcalli, 13 Acatl"></div>
-    </a>
+<!-- CUENTOS GRATIS -->
+<!-- Marker 1 -->
+<a href="your-url-1.html" id="marker-1">
+    <div class="marker-one" style="top: 32%; left: 39.5%;" data-title="Plumas de Colores"
+        data-date="6 Calli, 17 Izcalli, 13 Acatl"></div>
+</a>
 
 
-    <!-- LA RUTA DE LAS TORMENTAS -->
-    <!-- Marker 1 -->
-    <a href="your-url-1.html" id="marker-1">
-        <div class="marker-two" style="top: 29%; left: 39.5%;" data-title="La Cacería" data-date="Setiembre de 1502"></div>
-    </a>
-    
-    <!-- Marker 2 -->
-    <a href="your-url-2.html" id="marker-2">
-        <div class="marker-two" style="top: 60%; left: 30%;" data-title="Marker 2 Title" data-date="Feb 10, 2024"></div>
-    </a>
+<!-- LA RUTA DE LAS TORMENTAS -->
+<!-- Marker 1 -->
+<a href="your-url-1.html" id="marker-1">
+    <div class="marker-two" style="top: 29%; left: 39.5%;" data-title="La Cacería" data-date="Setiembre de 1502"></div>
+</a>
 
-    <!-- Map Label -->
-    <div id="map-label" class="map-label">
-        <h3 id="label-title">
-            <span id="label-name"></span> | <span id="label-date"></span>
-        </h3>
-    </div>
+<!-- Marker 2 -->
+<a href="your-url-2.html" id="marker-2">
+    <div class="marker-two" style="top: 60%; left: 30%;" data-title="Marker 2 Title" data-date="Feb 10, 2024"></div>
+</a>
+
+<!-- Map Label -->
+<div id="map-label" class="map-label">
+    <h3 id="label-title">
+        <span id="label-name"></span> | <span id="label-date"></span>
+    </h3>
 </div>
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const markers = document.querySelectorAll('.marker-one, .marker-two');
-    const label = document.getElementById('map-label');
-    const labelName = document.getElementById('label-name');
-    const labelDate = document.getElementById('label-date');
+    document.addEventListener('DOMContentLoaded', function () {
+        const markers = document.querySelectorAll('.marker-one, .marker-two');
+        const label = document.getElementById('map-label');
+        const labelName = document.getElementById('label-name');
+        const labelDate = document.getElementById('label-date');
 
-    markers.forEach(marker => {
-        marker.addEventListener('mouseenter', function() {
-            // Get the data attributes from the marker
-            const name = this.getAttribute('data-title');
-            const date = this.getAttribute('data-date');
-            
-            // Update the label content
-            labelName.textContent = name;
-            labelDate.textContent = date;
+        markers.forEach(marker => {
+            marker.addEventListener('mouseenter', function () {
+                // Get the data attributes from the marker
+                const name = this.getAttribute('data-title');
+                const date = this.getAttribute('data-date');
 
-            // Show the label
-            label.style.visibility = 'visible';
-            label.style.opacity = '0.4';
-        });
+                // Update the label content
+                labelName.textContent = name;
+                labelDate.textContent = date;
 
-        marker.addEventListener('mouseleave', function() {
-            // Hide the label when the marker is not hovered
-            label.style.visibility = 'hidden';
-            label.style.opacity = '0';
+                // Show the label
+                label.style.visibility = 'visible';
+                label.style.opacity = '0.4';
+            });
+
+            marker.addEventListener('mouseleave', function () {
+                // Hide the label when the marker is not hovered
+                label.style.visibility = 'hidden';
+                label.style.opacity = '0';
+            });
         });
     });
-});
 
 </script>
